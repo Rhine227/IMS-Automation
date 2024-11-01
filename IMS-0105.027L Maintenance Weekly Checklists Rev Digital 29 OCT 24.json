@@ -1,0 +1,907 @@
+[
+    {
+        "sheet": "Sheet1",
+        "categories": [
+            {
+                "category": "A.H.U. Checklist:",
+                "tasks": [
+                    {
+                        "task": "Condensation Lines:",
+                        "description": "Check for debris",
+                        "inputs": {
+                            "B10": "TC 16 OCT 24",
+                            "C10": "OK",
+                            "D10": "TC 17 OCT 24",
+                            "E10": "OK",
+                            "F10": "TC 29 OCT 24",
+                            "G10": "OK",
+                            "H10": "no input",
+                            "I10": "no input",
+                            "J10": "no input",
+                            "K10": "no input",
+                            "L10": "no input",
+                            "M10": "no input",
+                            "N10": "no input",
+                            "O10": "no input"
+                        }
+                    },
+                    {
+                        "task": "Unit:",
+                        "description": "Check for Unusual Noises Vibrations/Squealing",
+                        "inputs": {
+                            "B13": "TC 16 OCT 24",
+                            "C13": "OK",
+                            "D13": "TC 17 OCT 24",
+                            "E13": "OK",
+                            "F13": "TC 29 OCT 24",
+                            "G13": "OK",
+                            "H13": "no input",
+                            "I13": "no input",
+                            "J13": "no input",
+                            "K13": "no input",
+                            "L13": "no input",
+                            "M13": "no input",
+                            "N13": "no input",
+                            "O13": "no input"
+                        }
+                    },
+                    {
+                        "task": "Condenser Fan:",
+                        "description": "Inspect fan operation",
+                        "inputs": {
+                            "B17": "TC 16 OCT 24",
+                            "C17": "OK",
+                            "D17": "TC 17 OCT 24",
+                            "E17": "OK",
+                            "F17": "TC 29 OCT 24",
+                            "G17": "OK",
+                            "H17": "no input",
+                            "I17": "no input",
+                            "J17": "no input",
+                            "K17": "no input",
+                            "L17": "no input",
+                            "M17": "no input",
+                            "N17": "no input",
+                            "O17": "no input"
+                        }
+                    },
+                    {
+                        "task": "Condenser Coil:",
+                        "description": "Check for Dirt/Airborne Particles (cotton, bugs)",
+                        "inputs": {
+                            "B20": "TC 16 OCT 24",
+                            "C20": "OK",
+                            "D20": "TC 17 OCT 24",
+                            "E20": "OK",
+                            "F20": "TC 29 OCT 24",
+                            "G20": "OK",
+                            "H20": "no input",
+                            "I20": "no input",
+                            "J20": "no input",
+                            "K20": "no input",
+                            "L20": "no input",
+                            "M20": "no input",
+                            "N20": "no input",
+                            "O20": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Oil Spills and Painted Lines:",
+                "tasks": [
+                    {
+                        "task": "Oil Spills:",
+                        "description": "Check floor for oil spills from equipment etc.",
+                        "inputs": {
+                            "B25": "TC 16 OCT 24",
+                            "C25": "OK",
+                            "D25": "TC 17 OCT 24",
+                            "E25": "OK",
+                            "F25": "TC 29 OCT 24",
+                            "G25": "OK",
+                            "H25": "no input",
+                            "I25": "no input",
+                            "J25": "no input",
+                            "K25": "no input",
+                            "L25": "no input",
+                            "M25": "no input",
+                            "N25": "no input",
+                            "O25": "no input"
+                        }
+                    },
+                    {
+                        "task": "Check painted lines",
+                        "description": "Check forklift lines and around electrical boxes.",
+                        "inputs": {
+                            "B29": "TC 16 OCT 24",
+                            "C29": "OK",
+                            "D29": "TC 17 OCT 24",
+                            "E29": "OK",
+                            "F29": "TC 29 OCT 24",
+                            "G29": "OK",
+                            "H29": "no input",
+                            "I29": "no input",
+                            "J29": "no input",
+                            "K29": "no input",
+                            "L29": "no input",
+                            "M29": "no input",
+                            "N29": "no input",
+                            "O29": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Straps,Slings,Chain Hoist,and Eyelet Hooks",
+                "tasks": [
+                    {
+                        "task": "Straps,Slings,Chain Hoist,and Eyelet Hooks",
+                        "description": "Check for waer and Tear",
+                        "inputs": {
+                            "B34": "TC 16 OCT 24",
+                            "C34": "OK",
+                            "D34": "TC 17 OCT 24",
+                            "E34": "OK",
+                            "F34": "TC 29 OCT 24",
+                            "G34": "OK",
+                            "H34": "no input",
+                            "I34": "no input",
+                            "J34": "no input",
+                            "K34": "no input",
+                            "L34": "no input",
+                            "M34": "no input",
+                            "N34": "no input",
+                            "O34": "no input"
+                        }
+                    },
+                    {
+                        "task": "Chain hooks:",
+                        "description": "Check chain condition",
+                        "inputs": {
+                            "B37": "TC 16 OCT 24",
+                            "C37": "OK",
+                            "D37": "TC 17 OCT 24",
+                            "E37": "OK",
+                            "F37": "no input",
+                            "G37": "OK",
+                            "H37": "no input",
+                            "I37": "no input",
+                            "J37": "no input",
+                            "K37": "no input",
+                            "L37": "no input",
+                            "M37": "no input",
+                            "N37": "no input",
+                            "O37": "no input"
+                        }
+                    },
+                    {
+                        "task": "Hoist and Eyelet Hooks",
+                        "description": "Check chin codition, hook operation, and hoist operation",
+                        "inputs": {
+                            "B40": "TC 16 OCT 24",
+                            "C40": "OK",
+                            "D40": "TC 17 OCT 24",
+                            "E40": "OK",
+                            "F40": "TC 29 OCT 24",
+                            "G40": "OK",
+                            "H40": "no input",
+                            "I40": "no input",
+                            "J40": "no input",
+                            "K40": "no input",
+                            "L40": "no input",
+                            "M40": "no input",
+                            "N40": "no input",
+                            "O40": "no input"
+                        }
+                    },
+                    {
+                        "task": "Comments:",
+                        "description": "",
+                        "inputs": {
+                            "B45": "no input",
+                            "C45": "no input",
+                            "D45": "no input",
+                            "E45": "no input",
+                            "F45": "no input",
+                            "G45": "no input",
+                            "H45": "no input",
+                            "I45": "no input",
+                            "J45": "no input",
+                            "K45": "no input",
+                            "L45": "no input",
+                            "M45": "no input",
+                            "N45": "no input",
+                            "O45": "no input"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "sheet": "Sheet2",
+        "categories": [
+            {
+                "category": "Vacuum Cleaners Checklist:",
+                "tasks": [
+                    {
+                        "task": "Vacuum:",
+                        "description": "Check conditon of power switch (on/off), power cord (cuts), hoses, wheels, etc.",
+                        "inputs": {
+                            "B10": "TC 16 OCT 24",
+                            "C10": "OK",
+                            "D10": "TC 17 OCT 24",
+                            "E10": "OK",
+                            "F10": "TC 29 OCT 24",
+                            "G10": "OK",
+                            "H10": "no input",
+                            "I10": "no input",
+                            "J10": "no input",
+                            "K10": "no input",
+                            "L10": "no input",
+                            "M10": "no input",
+                            "N10": "no input",
+                            "O10": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Baler Checklist:",
+                "tasks": [
+                    {
+                        "task": "Unit:",
+                        "description": "Check safety gate, cable, and machine condition (oil leaks, broken welds, etc.)",
+                        "inputs": {
+                            "B17": "no input",
+                            "C17": "no input",
+                            "D17": "no input",
+                            "E17": "no input",
+                            "F17": "no input",
+                            "G17": "no input",
+                            "H17": "no input",
+                            "I17": "no input",
+                            "J17": "no input",
+                            "K17": "no input",
+                            "L17": "no input",
+                            "M17": "no input",
+                            "N17": "no input",
+                            "O17": "no input"
+                        }
+                    },
+                    {
+                        "task": "Hydraulics:",
+                        "description": "Hydraulic hose condition and fittings",
+                        "inputs": {
+                            "B22": "no input",
+                            "C22": "no input",
+                            "D22": "no input",
+                            "E22": "no input",
+                            "F22": "no input",
+                            "G22": "no input",
+                            "H22": "no input",
+                            "I22": "no input",
+                            "J22": "no input",
+                            "K22": "no input",
+                            "L22": "no input",
+                            "M22": "no input",
+                            "N22": "no input",
+                            "O22": "no input"
+                        }
+                    },
+                    {
+                        "task": "Electrical:",
+                        "description": "Emergency stop button Limit switch operation (up/ down)",
+                        "inputs": {
+                            "B26": "no input",
+                            "C26": "no input",
+                            "D26": "no input",
+                            "E26": "no input",
+                            "F26": "no input",
+                            "G26": "no input",
+                            "H26": "no input",
+                            "I26": "no input",
+                            "J26": "no input",
+                            "K26": "no input",
+                            "L26": "no input",
+                            "M26": "no input",
+                            "N26": "no input",
+                            "O26": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Chiller PM Checklist:",
+                "tasks": [
+                    {
+                        "task": "Unit:",
+                        "description": "Check water supply, water leaks, operation, pipes, unusual noises",
+                        "inputs": {
+                            "B32": "TC 16 OCT 24",
+                            "C32": "OK",
+                            "D32": "TC 17 OCT 24",
+                            "E32": "OK",
+                            "F32": "TC 29 OCT 24",
+                            "G32": "OK",
+                            "H32": "no input",
+                            "I32": "no input",
+                            "J32": "no input",
+                            "K32": "no input",
+                            "L32": "no input",
+                            "M32": "no input",
+                            "N32": "no input",
+                            "O32": "no input"
+                        }
+                    },
+                    {
+                        "task": "Compressor:",
+                        "description": "Check oil level, oil leaks, and refrigerant",
+                        "inputs": {
+                            "B37": "TC 16 OCT 24",
+                            "C37": "OK",
+                            "D37": "TC 17 OCT 24",
+                            "E37": "OK",
+                            "F37": "TC 29 OCT 24",
+                            "G37": "OK",
+                            "H37": "no input",
+                            "I37": "no input",
+                            "J37": "no input",
+                            "K37": "no input",
+                            "L37": "no input",
+                            "M37": "no input",
+                            "N37": "no input",
+                            "O37": "no input"
+                        }
+                    },
+                    {
+                        "task": "Condenser coil:",
+                        "description": "Check for dirt or airborne particles",
+                        "inputs": {
+                            "B41": "TC 16 OCT 24",
+                            "C41": "OK",
+                            "D41": "TC 17 OCT 24",
+                            "E41": "OK",
+                            "F41": "TC 29 OCT 24",
+                            "G41": "OK",
+                            "H41": "no input",
+                            "I41": "no input",
+                            "J41": "no input",
+                            "K41": "no input",
+                            "L41": "no input",
+                            "M41": "no input",
+                            "N41": "no input",
+                            "O41": "no input"
+                        }
+                    },
+                    {
+                        "task": "Comments:",
+                        "description": "",
+                        "inputs": {
+                            "B45": "no input",
+                            "C45": "no input",
+                            "D45": "no input",
+                            "E45": "no input",
+                            "F45": "no input",
+                            "G45": "no input",
+                            "H45": "no input",
+                            "I45": "no input",
+                            "J45": "no input",
+                            "K45": "no input",
+                            "L45": "no input",
+                            "M45": "no input",
+                            "N45": "no input",
+                            "O45": "no input"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "sheet": "Sheet3",
+        "categories": [
+            {
+                "category": "Hydraulic Hose Checklist:",
+                "tasks": [
+                    {
+                        "task": "Hydraulic Hoses:",
+                        "description": "Check hose condition and fittings for leaks on the blowline winders, forklift, production trollies, baler, etc.",
+                        "inputs": {
+                            "B10": "TC 16 OCT 24",
+                            "C10": "OK",
+                            "D10": "TC 17 OCT 24",
+                            "E10": "OK",
+                            "F10": "TC 29 OCT 24",
+                            "G10": "OK",
+                            "H10": "no input",
+                            "I10": "no input",
+                            "J10": "no input",
+                            "K10": "no input",
+                            "L10": "no input",
+                            "M10": "no input",
+                            "N10": "no input",
+                            "O10": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Traction Tape / Covers & Guards:",
+                "tasks": [
+                    {
+                        "task": "Traction Tape:",
+                        "description": "Check condition on loom covers, forklift, steps, etc.",
+                        "inputs": {
+                            "B18": "TC 16 OCT 24",
+                            "C18": "OK",
+                            "D18": "TC 17 OCT 24",
+                            "E18": "OK",
+                            "F18": "TC 29 OCT 24",
+                            "G18": "OK",
+                            "H18": "no input",
+                            "I18": "no input",
+                            "J18": "no input",
+                            "K18": "no input",
+                            "L18": "no input",
+                            "M18": "no input",
+                            "N18": "no input",
+                            "O18": "no input"
+                        }
+                    },
+                    {
+                        "task": "Covers & Guards:",
+                        "description": "Check operation, missing bolts, and condition",
+                        "inputs": {
+                            "B22": "TC 16 OCT 24",
+                            "C22": "OK",
+                            "D22": "TC 17 OCT 24",
+                            "E22": "OK",
+                            "F22": "TC 29 OCT 24",
+                            "G22": "OK",
+                            "H22": "no input",
+                            "I22": "no input",
+                            "J22": "no input",
+                            "K22": "no input",
+                            "L22": "no input",
+                            "M22": "no input",
+                            "N22": "no input",
+                            "O22": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Silo Checklist:",
+                "tasks": [
+                    {
+                        "task": "Units:",
+                        "description": "Check all doors (locked), piping for breakage or leaks, silo anchors (ground), and welds",
+                        "inputs": {
+                            "B27": "TC OCT 24",
+                            "C27": "OK",
+                            "D27": "TC 17 OCT 24",
+                            "E27": "OK",
+                            "F27": "TC 29 OCT 24",
+                            "G27": "OK",
+                            "H27": "no input",
+                            "I27": "no input",
+                            "J27": "no input",
+                            "K27": "no input",
+                            "L27": "no input",
+                            "M27": "no input",
+                            "N27": "no input",
+                            "O27": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Pressure Valve Checklist:",
+                "tasks": [
+                    {
+                        "task": "Pressure Valves:",
+                        "description": "Check for leakage and corrosion on the Blowline air tanks, air compressor, hotwater heaters, etc.",
+                        "inputs": {
+                            "B34": "TC 16 OCT 24",
+                            "C34": "OK",
+                            "D34": "TC 17 OCT 24",
+                            "E34": "OK",
+                            "F34": "TC 29 OCT 24",
+                            "G34": "OK",
+                            "H34": "no input",
+                            "I34": "no input",
+                            "J34": "no input",
+                            "K34": "no input",
+                            "L34": "no input",
+                            "M34": "no input",
+                            "N34": "no input",
+                            "O34": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Building Outside Lights:",
+                "tasks": [
+                    {
+                        "task": "Lights:",
+                        "description": "Check for operation",
+                        "inputs": {
+                            "B41": "TC 16 OCT 24",
+                            "C41": "OK",
+                            "D41": "TC 17 OCT 24",
+                            "E41": "OK",
+                            "F41": "TC 29 OCT 24",
+                            "G41": "OK",
+                            "H41": "no input",
+                            "I41": "no input",
+                            "J41": "no input",
+                            "K41": "no input",
+                            "L41": "no input",
+                            "M41": "no input",
+                            "N41": "no input",
+                            "O41": "no input"
+                        }
+                    },
+                    {
+                        "task": "Comments:",
+                        "description": "",
+                        "inputs": {
+                            "B44": "no input",
+                            "C44": "no input",
+                            "D44": "no input",
+                            "E44": "no input",
+                            "F44": "no input",
+                            "G44": "no input",
+                            "H44": "no input",
+                            "I44": "no input",
+                            "J44": "no input",
+                            "K44": "no input",
+                            "L44": "no input",
+                            "M44": "no input",
+                            "N44": "no input",
+                            "O44": "no input"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "sheet": "Sheet4",
+        "categories": [
+            {
+                "category": "20 Ton Shop Press:",
+                "tasks": [
+                    {
+                        "task": "Check condition \nof press",
+                        "description": "",
+                        "inputs": {
+                            "B10": "TC 16 OCT 24",
+                            "C10": "OK",
+                            "D10": "TC 17 OCT 24",
+                            "E10": "OK",
+                            "F10": "TC 29 OCT 24",
+                            "G10": "OK",
+                            "H10": "no input",
+                            "I10": "no input",
+                            "J10": "no input",
+                            "K10": "no input",
+                            "L10": "no input",
+                            "M10": "no input",
+                            "N10": "no input",
+                            "O10": "no input"
+                        }
+                    },
+                    {
+                        "task": "Check for oil \nleaks",
+                        "description": "",
+                        "inputs": {
+                            "B12": "TC 16 OCT 24",
+                            "C12": "OK",
+                            "D12": "TC 17 OCT 24",
+                            "E12": "OK",
+                            "F12": "TC 29 OCT 24",
+                            "G12": "OK",
+                            "H12": "no input",
+                            "I12": "no input",
+                            "J12": "no input",
+                            "K12": "no input",
+                            "L12": "no input",
+                            "M12": "no input",
+                            "N12": "no input",
+                            "O12": "no input"
+                        }
+                    },
+                    {
+                        "task": "Check table rest \ncondition, etc.",
+                        "description": "",
+                        "inputs": {
+                            "B14": "TC 16 OCT 24",
+                            "C14": "OK",
+                            "D14": "TC 17 OCT 24",
+                            "E14": "OK",
+                            "F14": "TC 29 OCT 24",
+                            "G14": "OK",
+                            "H14": "no input",
+                            "I14": "no input",
+                            "J14": "no input",
+                            "K14": "no input",
+                            "L14": "no input",
+                            "M14": "no input",
+                            "N14": "no input",
+                            "O14": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "TRASH COMPACTOR:",
+                "tasks": [
+                    {
+                        "task": "trash compactor \nand frame",
+                        "description": "",
+                        "inputs": {
+                            "B19": "no input",
+                            "C19": "no input",
+                            "D19": "no input",
+                            "E19": "no input",
+                            "F19": "no input",
+                            "G19": "no input",
+                            "H19": "no input",
+                            "I19": "no input",
+                            "J19": "no input",
+                            "K19": "no input",
+                            "L19": "no input",
+                            "M19": "no input",
+                            "N19": "no input",
+                            "O19": "no input"
+                        }
+                    },
+                    {
+                        "task": "Check for broken \nwelds",
+                        "description": "",
+                        "inputs": {
+                            "B21": "no input",
+                            "C21": "no input",
+                            "D21": "no input",
+                            "E21": "no input",
+                            "F21": "no input",
+                            "G21": "no input",
+                            "H21": "OUT OF SERVICE",
+                            "I21": "no input",
+                            "J21": "no input",
+                            "K21": "no input",
+                            "L21": "no input",
+                            "M21": "no input",
+                            "N21": "no input",
+                            "O21": "no input"
+                        }
+                    },
+                    {
+                        "task": "Check wiring",
+                        "description": "",
+                        "inputs": {
+                            "B23": "no input",
+                            "C23": "no input",
+                            "D23": "no input",
+                            "E23": "no input",
+                            "F23": "no input",
+                            "G23": "no input",
+                            "H23": "no input",
+                            "I23": "no input",
+                            "J23": "no input",
+                            "K23": "no input",
+                            "L23": "no input",
+                            "M23": "no input",
+                            "N23": "no input",
+                            "O23": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "SCISSOR LIFT(Pallet Lift):",
+                "tasks": [
+                    {
+                        "task": "check the caution \ntape, floor \nmarkings, \nsafety railing",
+                        "description": "",
+                        "inputs": {
+                            "B26": "TC 16 OCT 24",
+                            "C26": "OK",
+                            "D26": "TC 17 OCT 24",
+                            "E26": "OK",
+                            "F26": "TC 29 OCT 24",
+                            "G26": "no input",
+                            "H26": "no input",
+                            "I26": "no input",
+                            "J26": "no input",
+                            "K26": "no input",
+                            "L26": "no input",
+                            "M26": "no input",
+                            "N26": "no input",
+                            "O26": "no input"
+                        }
+                    }
+                ]
+            },
+            {
+                "category": "Production Ext. Cords:",
+                "tasks": [
+                    {
+                        "task": "Check retractabel units",
+                        "description": "check connections and cables for lacerations, check plug ends for damage.",
+                        "inputs": {
+                            "B35": "TC 16 OCT 24",
+                            "C35": "OK",
+                            "D35": "TC 17 OCT 24",
+                            "E35": "OK",
+                            "F35": "TC 29 OCT 24",
+                            "G35": "OK",
+                            "H35": "no input",
+                            "I35": "no input",
+                            "J35": "no input",
+                            "K35": "no input",
+                            "L35": "no input",
+                            "M35": "no input",
+                            "N35": "no input",
+                            "O35": "no input"
+                        }
+                    },
+                    {
+                        "task": "Check ext. cords ",
+                        "description": "Check for knots, \nkinks or lacerations",
+                        "inputs": {
+                            "B39": "TC 16 OCT 234",
+                            "C39": "OK",
+                            "D39": "TC 17 OCT 24",
+                            "E39": "OK",
+                            "F39": "TC 29 OCT 24",
+                            "G39": "OK",
+                            "H39": "no input",
+                            "I39": "no input",
+                            "J39": "no input",
+                            "K39": "no input",
+                            "L39": "no input",
+                            "M39": "no input",
+                            "N39": "no input",
+                            "O39": "no input"
+                        }
+                    },
+                    {
+                        "task": "Comments:",
+                        "description": "",
+                        "inputs": {
+                            "B42": "no input",
+                            "C42": "no input",
+                            "D42": "no input",
+                            "E42": "no input",
+                            "F42": "no input",
+                            "G42": "no input",
+                            "H42": "no input",
+                            "I42": "no input",
+                            "J42": "no input",
+                            "K42": "no input",
+                            "L42": "no input",
+                            "M42": "no input",
+                            "N42": "no input",
+                            "O42": "no input"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "sheet": "Sheet5",
+        "categories": [
+            {
+                "category": "A-Frame crane at BL:",
+                "tasks": [
+                    {
+                        "task": "check for loose bolts,",
+                        "description": "",
+                        "inputs": {
+                            "B10": "TC 16 OCT 24",
+                            "C10": "OK",
+                            "D10": "TC 17 OCT 24",
+                            "E10": "OK",
+                            "F10": "TC 29 OCT 24",
+                            "G10": "OK",
+                            "H10": "no input",
+                            "I10": "no input",
+                            "J10": "no input",
+                            "K10": "no input",
+                            "L10": "no input",
+                            "M10": "no input",
+                            "N10": "no input",
+                            "O10": "no input"
+                        }
+                    },
+                    {
+                        "task": "check for broken welds, \npaint, sign, work, etc\u2026",
+                        "description": "",
+                        "inputs": {
+                            "B11": "TC 16 OCT 24",
+                            "C11": "OK",
+                            "D11": "TC 17 OCT 24",
+                            "E11": "OK",
+                            "F11": "TC 29 OCT 24",
+                            "G11": "OK",
+                            "H11": "no input",
+                            "I11": "no input",
+                            "J11": "no input",
+                            "K11": "no input",
+                            "L11": "no input",
+                            "M11": "no input",
+                            "N11": "no input",
+                            "O11": "no input"
+                        }
+                    },
+                    {
+                        "task": "Check the wheels & operation",
+                        "description": "",
+                        "inputs": {
+                            "B14": "TC 16 OCT 24",
+                            "C14": "OK",
+                            "D14": "TC 17 OCT 24",
+                            "E14": "OK",
+                            "F14": "TC 29 OCT 24",
+                            "G14": "OK",
+                            "H14": "no input",
+                            "I14": "no input",
+                            "J14": "no input",
+                            "K14": "no input",
+                            "L14": "no input",
+                            "M14": "no input",
+                            "N14": "no input",
+                            "O14": "no input"
+                        }
+                    },
+                    {
+                        "task": "Check the safety \nlock is in place",
+                        "description": "",
+                        "inputs": {
+                            "B17": "TC 16 OCT 24",
+                            "C17": "OK",
+                            "D17": "TC 17 OCT 24",
+                            "E17": "OK",
+                            "F17": "TC 29 OCT 24",
+                            "G17": "OK",
+                            "H17": "no input",
+                            "I17": "no input",
+                            "J17": "no input",
+                            "K17": "no input",
+                            "L17": "no input",
+                            "M17": "no input",
+                            "N17": "no input",
+                            "O17": "no input"
+                        }
+                    },
+                    {
+                        "task": "Comments:",
+                        "description": "",
+                        "inputs": {
+                            "B20": "no input",
+                            "C20": "no input",
+                            "D20": "no input",
+                            "E20": "no input",
+                            "F20": "no input",
+                            "G20": "no input",
+                            "H20": "no input",
+                            "I20": "no input",
+                            "J20": "no input",
+                            "K20": "no input",
+                            "L20": "no input",
+                            "M20": "no input",
+                            "N20": "no input",
+                            "O20": "no input"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
