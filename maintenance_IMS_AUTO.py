@@ -7,7 +7,7 @@ The script identifies categories, tasks, and input fields based on specific form
 """
 
 import json
-import re
+import os
 import logging
 from tkinter import Tk, messagebox
 from tkinter.filedialog import askopenfilename
