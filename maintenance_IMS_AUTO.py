@@ -1,184 +1,166 @@
 """
 IMS Automation Script
-
-This script processes Excel-based Inspection Maintenance System (IMS) templates.
-It extracts structured data from Excel worksheets and converts it to JSON format.
-The script identifies categories, tasks, and input fields based on specific formatting rules.
+Processes Excel-based Inspection Maintenance System (IMS) templates and converts to JSON format.
 """
 
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Set
+from pathlib import Path
 import json
-import os
 import logging
 from tkinter import Tk, messagebox
 from tkinter.filedialog import askopenfilename
 import openpyxl
+from openpyxl.worksheet.worksheet import Worksheet
 from openpyxl.utils.exceptions import InvalidFileException
 
-# Configure logging with timestamp, level, and message format
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# Constants
+INPUT_HEADERS = {"Date Inspected by who?", "OK", "OK?", "Date Inspected by who"}
+CATEGORY_COLOR = 'FFFFFF00'  # Yellow background
+DEFAULT_VALUE = "no input"
 
-def get_excel_data(file_path: str) -> list:
-    """
-    Extract and structure data from an Excel file into a hierarchical format.
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
-    Args:
-        file_path (str): Path to the Excel file to process.
+@dataclass
+class Task:
+    """Represents a task with its properties."""
+    name: str
+    description: str = ""
+    inputs: Dict[str, str] = field(default_factory=dict)
 
-    Returns:
-        list: List of dictionaries containing structured worksheet data.
-              Each dictionary contains sheet name, categories, tasks, and their inputs.
-              Returns empty list on error.
+@dataclass
+class Category:
+    """Represents a category containing tasks."""
+    name: str
+    tasks: List[Task] = field(default_factory=list)
 
-    Structure:
-    {
-        'sheet': sheet_name,
-        'categories': [
-            {
-                'category': category_name,
-                'tasks': [
-                    {
-                        'task': task_name,
-                        'description': task_description,
-                        'inputs': {cell_coordinate: input_value}
-                    }
-                ]
-            }
-        ]
-    }
-    """
-    try:
-        workbook = openpyxl.load_workbook(file_path)
-    except InvalidFileException as e:
-        logging.error(f"Invalid file: {file_path}. Error: {e}")
-        return []
-    except Exception as e:
-        logging.error(f"Error loading workbook: {e}")
-        return []
+@dataclass
+class SheetData:
+    """Represents sheet data with categories."""
+    name: str
+    categories: List[Category] = field(default_factory=list)
 
-    data = []
-    all_input_cells = []
+class ExcelProcessor:
+    """Handles Excel file processing and data extraction."""
+    
+    def __init__(self, file_path: Path):
+        self.file_path = file_path
+        self.workbook = None
+        self.input_columns: Set[str] = set()
+    
+    def process_workbook(self) -> List[SheetData]:
+        """Process the entire workbook and return structured data."""
+        try:
+            self.workbook = openpyxl.load_workbook(self.file_path)
+            return [self._process_worksheet(sheet) for sheet in self.workbook.worksheets]
+        except InvalidFileException as e:
+            logger.error(f"Invalid Excel file: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Error processing workbook: {e}")
+            raise
 
-    # Process each worksheet in the workbook
-    for sheet in workbook.worksheets:
-        sheet_data = {"sheet": sheet.title, "categories": []}
+    def _identify_input_columns(self, worksheet: Worksheet) -> Set[str]:
+        """Identify columns containing input fields."""
+        input_cols = set()
+        for col in worksheet.iter_cols(values_only=False):
+            for cell in col:
+                if cell.value in INPUT_HEADERS:
+                    input_cols.add(openpyxl.utils.get_column_letter(cell.column))
+        return input_cols
+
+    def _process_worksheet(self, worksheet: Worksheet) -> SheetData:
+        """Process a single worksheet and extract structured data."""
+        sheet_data = SheetData(name=worksheet.title)
         current_category = None
         current_task = None
-        input_columns = set()
-        input_rows = set()
-        comments_section = False
-
-        # Identify input columns by searching for specific headers
-        for col in sheet.iter_cols(values_only=False):
-            for cell in col:
-                if cell.value is not None:
-                    logging.debug(f"Checking cell {cell.coordinate} with value: {cell.value}")
-                # Look for columns that contain input field headers
-                if cell.value in ["Date Inspected by who?", "OK", "OK?", "Date Inspected by who"]:
-                    input_columns.add(openpyxl.utils.get_column_letter(cell.column))
+        self.input_columns = self._identify_input_columns(worksheet)
         
-        logging.info(f"Identified input columns in {sheet.title}: {sorted(input_columns)}")
-
-        # Process rows to extract categories, tasks, and inputs
-        for row in sheet.iter_rows(min_row=2, values_only=False):
-            cell_value = row[0].value
-            if cell_value is None:
+        for row in worksheet.iter_rows(min_row=2, values_only=False):
+            first_cell = row[0]
+            if not first_cell.value:
                 continue
 
-            cell_style = row[0].font
-            cell_fill = row[0].fill
-
-            # Category identification (yellow background + bold text)
-            if cell_fill.start_color and cell_fill.start_color.rgb == 'FFFFFF00' and cell_style.bold:
-                current_category = cell_value
-                sheet_data["categories"].append({"category": current_category, "tasks": []})
+            if self._is_category(first_cell):
+                current_category = Category(name=first_cell.value)
+                sheet_data.categories.append(current_category)
                 current_task = None
-                comments_section = False
-            
-            # Task identification (bold text within a category)
-            elif cell_style.bold and current_category and not comments_section:
-                current_task = cell_value
-                task_row = row[0].row
-                input_rows.add(task_row)
-                logging.info(f"Task '{current_task}' identified in row {task_row}")
-                sheet_data["categories"][-1]["tasks"].append({
-                    "task": current_task,
-                    "description": "",
-                    "inputs": {}
-                })
-            
-            # Description processing (non-bold text under a task)
-            elif current_task and not cell_style.bold and not comments_section:
-                if sheet_data["categories"][-1]["tasks"][-1]["description"]:
-                    sheet_data["categories"][-1]["tasks"][-1]["description"] += " " + cell_value
-                else:
-                    sheet_data["categories"][-1]["tasks"][-1]["description"] = cell_value
+            elif self._is_task(first_cell) and current_category:
+                current_task = Task(name=first_cell.value)
+                current_category.tasks.append(current_task)
+                self._process_input_cells(row, current_task)
+            elif current_task and not first_cell.font.bold:
+                self._append_description(current_task, first_cell.value)
 
-            # Process input cells for the current task
-            if current_category and current_task:
-                for cell in row[1:sheet.max_column + 1]:
-                    cell_coord = cell.coordinate
-                    column_letter = openpyxl.utils.get_column_letter(cell.column)
-                    if column_letter in input_columns and cell.row == task_row:
-                        cell_value = cell.value if cell.value is not None else "no input"
-                        sheet_data["categories"][-1]["tasks"][-1]["inputs"][cell_coord] = cell_value
-                        logging.info(f"Processed input cell {cell_coord} with value: {cell_value}")
-                        all_input_cells.append(cell_coord)
+        return sheet_data
 
-            # Comments section marker
-            if cell_value == "Comments":
-                comments_section = True
+    @staticmethod
+    def _is_category(cell) -> bool:
+        """Check if cell represents a category."""
+        return (cell.fill.start_color and 
+                cell.fill.start_color.rgb == CATEGORY_COLOR and 
+                cell.font.bold)
 
-        data.append(sheet_data)
-    
-    logging.info(f"All input cells: {all_input_cells}")
-    return data
+    @staticmethod
+    def _is_task(cell) -> bool:
+        """Check if cell represents a task."""
+        return cell.font.bold
 
-def save_to_json(data: list, output_file: str) -> None:
-    """
-    Save extracted data to a JSON file with proper formatting.
+    def _process_input_cells(self, row, task: Task) -> None:
+        """Process input cells for a task."""
+        for cell in row[1:]:
+            col_letter = openpyxl.utils.get_column_letter(cell.column)
+            if col_letter in self.input_columns:
+                task.inputs[cell.coordinate] = cell.value or DEFAULT_VALUE
 
-    Args:
-        data (list): Structured data to be saved
-        output_file (str): Path to the output JSON file
-    """
+    @staticmethod
+    def _append_description(task: Task, text: str) -> None:
+        """Append description text to a task."""
+        task.description = f"{task.description} {text}".strip()
+
+def save_to_json(data: List[SheetData], output_path: Path) -> None:
+    """Save extracted data to JSON file."""
     try:
-        with open(output_file, 'w') as json_file:
-            json.dump(data, json_file, indent=4)
+        output_path.write_text(
+            json.dumps([sheet.__dict__ for sheet in data], indent=4),
+            encoding='utf-8'
+        )
+        logger.info(f"Data saved to {output_path}")
     except Exception as e:
-        logging.error(f"Error saving to JSON file: {e}")
+        logger.error(f"Failed to save JSON: {e}")
+        raise
 
-def main(template: str = None) -> None:
-    """
-    Main execution function that orchestrates the Excel data extraction process.
-
-    Args:
-        template (str, optional): Template name to process. If None, opens file dialog.
-    """
-    # Initialize hidden Tkinter root window for file dialog
+def main(template: Optional[str] = None) -> None:
+    """Main execution function."""
     root = Tk()
     root.withdraw()
-    
-    # Handle template-based or manual file selection
-    if template:
-        file_path = os.path.join("IMS_TEMPLATE_COPIES", template, f"{template}.xlsx")
-        if not os.path.exists(file_path):
-            messagebox.showerror("Error", f"Template file not found: {file_path}")
-            return
-    else:
-        file_path = askopenfilename(title="Select Excel File", filetypes=[("Excel files", "*.xlsx *.xls")])
-        if not file_path:
-            messagebox.showinfo("No file selected", "No file selected.")
-            return
-    
-    # Process Excel file and save results
-    data = get_excel_data(file_path)
-    if not data:
-        messagebox.showerror("Error", "Failed to extract data from the Excel file.")
-        return
-    
-    output_file = file_path.rsplit('.', 1)[0] + ".json"
-    save_to_json(data, output_file)
-    print(f"Data extracted and saved to {output_file}")
+
+    try:
+        if template:
+            file_path = Path("IMS_TEMPLATE_COPIES") / template / f"{template}.xlsx"
+            if not file_path.exists():
+                raise FileNotFoundError(f"Template not found: {file_path}")
+        else:
+            file_path = Path(askopenfilename(
+                title="Select Excel File",
+                filetypes=[("Excel files", "*.xlsx *.xls")]
+            ))
+            if not file_path.name:
+                logger.info("No file selected")
+                return
+
+        processor = ExcelProcessor(file_path)
+        data = processor.process_workbook()
+        save_to_json(data, file_path.with_suffix('.json'))
+
+    except Exception as e:
+        logger.error(f"Error processing file: {e}")
+        messagebox.showerror("Error", str(e))
 
 if __name__ == "__main__":
     main()
